@@ -1,0 +1,75 @@
+.comentario {
+    border-left: 3px solid #FF9B52;
+    padding-left: 26px;
+    margin-bottom: 2rem;
+
+    .nome-data {
+        color: #409dc7;
+        font-size: 15px;
+        cursor: pointer;
+        font-weight: 500;
+    }
+
+    .botoes {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        gap: 1rem;
+
+        .btn-compartilhar, .btn-reportar, .btn-responder {
+            border: none;
+            height: 2rem;
+            border-radius: 5px;
+            color: #ffff;
+            cursor: pointer;
+            box-shadow: rgb(88 119 146) 1px 1px 3px;
+            width: 10rem;
+        }
+
+        .btn-compartilhar {
+            background-color: #03a9f4;
+        }
+
+        .btn-responder {
+            background-color: #86D9AB;
+        }
+
+        .btn-reportar {
+            background-color: #f7765f;
+        }
+
+    }
+
+    .resposta {
+        margin-top: 25px;
+
+        textarea {
+            box-shadow: rgb(88 119 146) 1px 1px 3px;
+            border: none;
+            width: 100%;
+            height: 115px;
+            border-radius: 5px;
+        }
+
+        .btn-enviar {
+            border: none;
+            height: 2rem;
+            border-radius: 5px;
+            box-shadow: 1px 1px 3px #587792;
+            cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 770px) {
+    .comentario {
+        .botoes {
+            display: grid;
+            grid-template-columns: 1fr;
+
+            .btn-compartilhar, .btn-reportar, .btn-responder {
+                width: 100%;
+            }
+        }
+    }
+}

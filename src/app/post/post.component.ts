@@ -10,6 +10,7 @@ import * as data from '../mocks/rawPost';
 export class PostComponent implements OnInit {
 
   post: any = data.default;
+  comentarios = this.post.comments;
 
   constructor() { }
 
