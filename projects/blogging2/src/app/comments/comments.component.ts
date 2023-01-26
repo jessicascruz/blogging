@@ -17,6 +17,8 @@ export class CommentsComponent implements OnInit {
     this.campoResposta = !this.campoResposta;
   }
 
+  acaoPrimaria() {}
+
   ngOnInit(): void {
     console.log(this.comentarios);
   }

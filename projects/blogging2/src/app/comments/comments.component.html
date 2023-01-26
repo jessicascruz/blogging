@@ -2,7 +2,7 @@
     <h2>Comentários</h2>
 
     <div class="comentario" *ngFor="let item of comentarios">
-        <p class="nome-data">{{ item.author.username }} - {{ item.timestamp }}</p>
+        <p class="nome-data" (click)="modal.toggle()">{{ item.author.username }} - {{ item.timestamp }}</p>
 
         <div class="conteudo">{{ item.content }}</div>
 
@@ -18,3 +18,31 @@
         </div>
     </div>
 </div>
+
+<app-modal #modal>
+    <h1>Lorem, ipsum dolor.</h1>
+    <p>
+      Lorem ipsum, dolor sit amet
+      consectetur adipisicing elit.
+      Earum dicta non alias distinctio,
+      aliquid aperiam ipsum provident
+      quae nihil voluptatibus veniam
+      fuga similique facilis consequatur
+      reiciendis recusandae. Velit magni
+      distinctio corporis eaque ad itaque
+      ex impedit accusamus. Debitis pariatur
+      cum quam rerum reprehenderit quod
+      iure, in explicabo facere vero nemo?
+    </p>
+
+    <!--
+         "acaoPrimaria()" é um método
+         dentro do app.component.ts
+    -->
+    <button
+      (click)="acaoPrimaria(); modal.toggle();"
+      class="btn-primario">Ação</button>
+
+    <button
+      class="btn-secundario">Ação 2</button>
+  </app-modal>
