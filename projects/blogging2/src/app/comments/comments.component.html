@@ -2,7 +2,8 @@
     <h2>Comentários</h2>
 
     <div class="comentario" *ngFor="let item of comentarios">
-        <p class="nome-data" (click)="modal.toggle()">{{ item.author.username }} - {{ item.timestamp }}</p>
+        <p class="nome-data" (click)="modal.toggle();dadosModal(item.author.id)">{{ item.author.username }} - {{
+            item.timestamp }}</p>
 
         <div class="conteudo">{{ item.content }}</div>
 
@@ -20,29 +21,35 @@
 </div>
 
 <app-modal #modal>
-    <h1>Lorem, ipsum dolor.</h1>
-    <p>
-      Lorem ipsum, dolor sit amet
-      consectetur adipisicing elit.
-      Earum dicta non alias distinctio,
-      aliquid aperiam ipsum provident
-      quae nihil voluptatibus veniam
-      fuga similique facilis consequatur
-      reiciendis recusandae. Velit magni
-      distinctio corporis eaque ad itaque
-      ex impedit accusamus. Debitis pariatur
-      cum quam rerum reprehenderit quod
-      iure, in explicabo facere vero nemo?
-    </p>
+    <div class="modal">
+        <div class="dados-usuario" *ngFor="let item of dadosUsuarioModal">
+            <img class="avatar" src="../../assets/img/avatar{{ item.id }}.jpg" alt="Avatar">
+            <div>
+                <p class="nome">{{ item.username }}</p>
+                <p class="data-filiacao">{{ item.memberSince }}</p>
+            </div>
+            <div class="btn">
+                <button class="btn-adicionar" (click)="addUsuario()" *ngIf="adicionar">Adicionar</button>
+                <button class="btn-adicionar" (click)="addUsuario()" *ngIf="!adicionar">Excluir</button>
+            </div>
+        </div>
 
-    <!--
-         "acaoPrimaria()" é um método
-         dentro do app.component.ts
-    -->
-    <button
-      (click)="acaoPrimaria(); modal.toggle();"
-      class="btn-primario">Ação</button>
+        <div class="amigos-comum">
+            <h4>Amigos em comum: </h4>
+            <span *ngFor="let item of amigos">{{ item.username }}, </span>
+        </div>
 
-    <button
-      class="btn-secundario">Ação 2</button>
-  </app-modal>
+        <div class="posts" *ngFor="let item of posts">
+            <h3>{{ item.title }}</h3>
+            <h5>{{ item.subtitle }}</h5>
+            <p>{{ item.content }}</p>
+        </div>
+
+
+    </div>
+    <div class="botoes-acao">
+        <button class="btn-mensagem">Mensagem</button>
+        <button class="btn-reportar">Reportar</button>
+        <a (click)="modal.toggle();" class="btn-cancelar">Cancelar</a>
+    </div>
+</app-modal>
