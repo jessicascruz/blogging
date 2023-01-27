@@ -25,3 +25,12 @@
     width: 100vw;
     z-index: 10;
   }
+
+
+  @media (max-width: 770px) {
+
+    .modal {
+        min-width: 245px;
+        max-height: 72vmax;
+    }
+}

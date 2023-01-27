@@ -45,6 +45,7 @@ export class CommentsComponent implements OnInit {
   }
 
   amigosComum(ids: Array<number>) {
+    this.amigos.pop();
     for (let i = 0; i < this.usuarios.length; i++) {
 
       for (let j = 0; j < ids.length; j++) {
@@ -56,7 +57,6 @@ export class CommentsComponent implements OnInit {
       }
 
     }
-    console.log(this.amigos);
   }
 
   ngOnInit(): void {

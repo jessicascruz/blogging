@@ -174,4 +174,18 @@
             }
         }
     }
+
+    .modal {
+        .dados-usuario {
+            .avatar {
+                width: 62px;
+            }
+        }
+    }
+
+    .botoes-acao {
+        .btn-mensagem, .btn-reportar {
+            margin-bottom: 9px;
+        }
+    }
 }
