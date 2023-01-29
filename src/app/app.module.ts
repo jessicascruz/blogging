@@ -1,3 +1,4 @@
+import { App2Module } from './../../projects/blogging2/src/app/app.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,11 +11,12 @@ import { PostComponent } from './post/post.component';
   declarations: [
     AppComponent,
     HeaderComponent,
-    PostComponent
+    PostComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    App2Module
   ],
   providers: [],
   bootstrap: [AppComponent]
