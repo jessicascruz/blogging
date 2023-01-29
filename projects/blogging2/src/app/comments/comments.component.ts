@@ -60,8 +60,6 @@ export class CommentsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    // console.log(this.usuarios);
-    // console.log(this.comentarios);
   }
 
 }

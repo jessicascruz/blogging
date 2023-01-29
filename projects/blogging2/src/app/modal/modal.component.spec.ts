@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ModalComponent } from './modal.component';
+import { concatMap } from 'rxjs';
 
 describe('ModalComponent', () => {
   let component: ModalComponent;
@@ -20,4 +21,11 @@ describe('ModalComponent', () => {
   it('should create', () => {
     expect(component).toBeTruthy();
   });
+
+  it('should enter toggle function', () => {
+    component.toggle();
+
+    expect(component.mostrar).toBeTrue();
+  });
+
 });
