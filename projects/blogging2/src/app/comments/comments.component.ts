@@ -62,10 +62,9 @@ export class CommentsComponent implements OnInit {
   }
 
   addComentario(value: string, index: number) {
-
     var ultimoComentario = this.comentarios.slice(-1);
     const id = ultimoComentario[0].id + 1;
-    const responds = index + 1;
+    const responds = index;
     var timestamp = new Date().toISOString();
 
     const novoComentario: Comments = {
@@ -78,6 +77,7 @@ export class CommentsComponent implements OnInit {
 
     this.comentarios.push(novoComentario);
     this.campoResposta = false;
+    this.arrayParaArvore();
   }
 
 
@@ -89,6 +89,9 @@ export class CommentsComponent implements OnInit {
       this.arvoreNode1 = this.arvore[1].nodes;
       this.arvoreNode2 = this.arvore[1].nodes[0].nodes;
     }
+
+    console.log(this.arvore);
+
   }
 
   ngOnInit(): void {

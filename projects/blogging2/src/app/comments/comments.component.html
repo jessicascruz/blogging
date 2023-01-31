@@ -28,13 +28,13 @@
 
                 <div class="botoes">
                     <button class="btn-compartilhar">Compartilhar</button>
-                    <button class="btn-responder" (click)="mudaCampoResposta(i)">Responder</button>
+                    <button class="btn-responder" (click)="mudaCampoResposta(item.data.id)">Responder</button>
                     <button class="btn-reportar">Reportar</button>
                 </div>
 
-                <div class="resposta" *ngIf="campoResposta && index === i">
+                <div class="resposta" *ngIf="campoResposta && index === item.data.id">
                     <textarea id="resposta" name="resposta" #textarea></textarea>
-                    <button class="btn-enviar" (click)="addComentario(textarea.value, i)">Enviar</button>
+                    <button class="btn-enviar" (click)="addComentario(textarea.value, item.data.id)">Enviar</button>
                 </div>
             </div>
 
@@ -47,13 +47,13 @@
 
                     <div class="botoes">
                         <button class="btn-compartilhar">Compartilhar</button>
-                        <button class="btn-responder" (click)="mudaCampoResposta(i)">Responder</button>
+                        <button class="btn-responder" (click)="mudaCampoResposta(item.data.id)">Responder</button>
                         <button class="btn-reportar">Reportar</button>
                     </div>
 
-                    <div class="resposta" *ngIf="campoResposta && index === i">
+                    <div class="resposta" *ngIf="campoResposta && index === item.data.id">
                         <textarea id="resposta" name="resposta" #textarea></textarea>
-                        <button class="btn-enviar" (click)="addComentario(textarea.value, i)">Enviar</button>
+                        <button class="btn-enviar" (click)="addComentario(textarea.value, item.data.id)">Enviar</button>
                     </div>
                 </div>
 
