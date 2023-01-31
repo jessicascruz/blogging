@@ -1,0 +1,18 @@
+<div class="post">
+    <h2 class="titulo">{{ post.title }}</h2>
+    <p class="subtitulo">{{ post.subtitulo }}</p>
+    <div class="autor">
+        <img class="avatar" src="assets/img/avatar1.jpg" alt="foto usuário autor do artigo">
+        <span class="nome">{{ post.author.username }}</span>
+        <span class="data">{{ post.timestamp }}</span>
+    </div>
+    <div class="corpo">
+        <p>
+            {{ post.content }}
+        </p>
+    </div>
+
+    <div>
+        <app-comments [comentarios]="comentarios"></app-comments>
+    </div>
+</div>

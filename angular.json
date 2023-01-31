@@ -191,6 +191,7 @@
             "tsConfig": "projects/blogging2/tsconfig.spec.json",
             "karmaConfig": "projects/blogging2/karma.conf.js",
             "inlineStyleLanguage": "scss",
+            "codeCoverage": true,
             "assets": [
               "projects/blogging2/src/favicon.ico",
               "projects/blogging2/src/assets"
