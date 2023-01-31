@@ -1,5 +1,5 @@
 import { Comments } from './Comments';
-import { Author } from "./author";
+import { Author } from "./Author";
 
 
 export class Post {
@@ -9,5 +9,5 @@ export class Post {
     title!: string;
     subtitle!: string;
     content!: string;
-    comments!: Comments;
+    comments!: Array<Comments>;
 }

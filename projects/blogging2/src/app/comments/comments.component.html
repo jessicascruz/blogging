@@ -1,23 +1,68 @@
 <div>
     <h2>Comentários</h2>
 
-    <div class="comentario" *ngFor="let item of comentarios">
-        <p class="nome-data" (click)="modal.toggle();dadosModal(item.author.id)">{{ item.author.username }} - {{
-            item.timestamp }}</p>
+    <div class="comentario" *ngFor="let item of arvoreNull; let i = index">
+        <div>
+        <p class="nome-data" (click)="modal.toggle();dadosModal(item.data.author.id)">{{ item.data.author.username }} - {{
+            item.data.timestamp }}</p>
 
-        <div class="conteudo">{{ item.content }}</div>
+        <div class="conteudo">{{ item.data.content }}</div>
 
         <div class="botoes">
             <button class="btn-compartilhar">Compartilhar</button>
-            <button class="btn-responder" (click)="mudaCampoResposta()">Responder</button>
+            <button class="btn-responder" (click)="mudaCampoResposta(i)">Responder</button>
             <button class="btn-reportar">Reportar</button>
         </div>
 
-        <div class="resposta" *ngIf="campoResposta">
-            <textarea id="story" name="story"></textarea>
-            <button class="btn-enviar">Enviar</button>
+        <div class="resposta" *ngIf="campoResposta && index === i">
+            <textarea id="resposta" name="resposta" #textarea></textarea>
+            <button class="btn-enviar" (click)="addComentario(textarea.value, i)">Enviar</button>
         </div>
     </div>
+        <div class="comentario" *ngIf="i > 0">
+            <div *ngFor="let item of arvoreNode1">
+                <p class="nome-data" (click)="modal.toggle();dadosModal(item.data.author.id)">{{ item.data.author.username }} -
+                    {{ item.data.timestamp }}</p>
+
+                <div class="conteudo">{{ item.data.content }}</div>
+
+                <div class="botoes">
+                    <button class="btn-compartilhar">Compartilhar</button>
+                    <button class="btn-responder" (click)="mudaCampoResposta(i)">Responder</button>
+                    <button class="btn-reportar">Reportar</button>
+                </div>
+
+                <div class="resposta" *ngIf="campoResposta && index === i">
+                    <textarea id="resposta" name="resposta" #textarea></textarea>
+                    <button class="btn-enviar" (click)="addComentario(textarea.value, i)">Enviar</button>
+                </div>
+            </div>
+
+            <div class="comentario">
+                <div *ngFor="let item of arvoreNode2">
+                    <p class="nome-data" (click)="modal.toggle();dadosModal(item.data.author.id)">{{ item.data.author.username }} -
+                        {{ item.data.timestamp }}</p>
+
+                    <div class="conteudo">{{ item.data.content }}</div>
+
+                    <div class="botoes">
+                        <button class="btn-compartilhar">Compartilhar</button>
+                        <button class="btn-responder" (click)="mudaCampoResposta(i)">Responder</button>
+                        <button class="btn-reportar">Reportar</button>
+                    </div>
+
+                    <div class="resposta" *ngIf="campoResposta && index === i">
+                        <textarea id="resposta" name="resposta" #textarea></textarea>
+                        <button class="btn-enviar" (click)="addComentario(textarea.value, i)">Enviar</button>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </div>
 
 <app-modal #modal>
